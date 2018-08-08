@@ -1,1 +1,330 @@
 /* You can add global styles to this file, and also import other style files */
+
+h2{
+	color:#99AA84;	
+}
+#title{
+	font-size:7rem;	
+	margin-top:2rem;
+}
+
+.title_key{
+	font-size:1rem;	
+	margin-top:0.3rem;
+	font-weight: bold;
+	color:rgb(32, 52, 68);
+}
+.title_value{
+	font-size:1rem;	
+	margin-top:0.3rem;
+	
+}
+
+.background{
+	color:#e0e0e0;	
+}
+
+.mtopbar{
+	background:rgba(45, 47, 46, 0.46);
+	margin-bottom:2.5rem;
+	
+	
+}
+
+.index_topbar{
+	background:#304054ed;
+	margin-bottom:0rem;
+}
+
+.mlabel{
+	padding: 0.5rem;
+	color: #e0e0e0;
+	text-align:left;
+}
+
+#label_login{
+	color: #e0e0e0;
+	text-align:left;
+}
+#label_password{
+	color: #e0e0e0;
+	text-align:left;
+}
+#button_login{
+	margin-top:2rem;	
+}
+
+.mytopbar{
+	background:rgba(66, 101, 83, 0.21);
+	padding-bottom:1rem
+	
+}
+
+.title-small{
+	color:#fff;
+	padding-top:1rem; 
+	}
+.mbutton{
+	background:	rgb(75, 88, 97);
+	border: 1px solid gray;
+	margin-bottom:0.2rem;
+	
+}
+
+
+.globalheader{
+	padding-bottom: 1rem;
+	text-align: center;
+	background: #8d6755;
+	background-size: cover;
+	position: relative;
+	overflow: visible;
+}
+
+.mheader{
+		
+	padding-bottom: 0.5rem;
+	text-align: center;
+	background-color:#234;
+	background-size: cover;
+	position: relative;
+	overflow: visible;
+		
+}
+
+
+.main_topbar{
+	background:#1b2c34cf;
+	padding-bottom:8rem
+	
+}
+
+.header {
+	text-align: center;
+	background: #8d6755;
+	background-size: cover;
+	position: relative;
+	overflow: visible;
+	padding-bottom: 4.9rem;
+}
+
+.indexheader {
+	text-align: center;
+	background: #0F0;
+	background-size: cover;
+	position: relative;
+	overflow: visible;
+	padding-bottom: 4.9rem;
+}
+
+.header .headline {
+	color: #ffe; 
+}
+.globalheader .headline {
+	color: #ffe; 
+}
+.item{
+	text-align: left;	 
+	}
+.header-subnav {
+	float: none;
+	position: absolute;
+	text-align: center;
+	margin: 0 auto;
+	bottom: 0;
+	
+}
+
+
+.header-subnav li {
+	float: none;
+display: inline-block; 
+}
+
+.header-subnav li a {
+	padding: 0.9rem 1rem;
+	font-size: 0.75rem;
+	color: #ffe;
+	text-transform: uppercase;
+	display: block;
+	font-weight: bold;
+	letter-spacing: 1px;
+transition: all 0.35s ease-in-out; 
+}
+
+.header-subnav li a.is-active {
+
+background: rgba(250, 250, 250, 0.15); 
+}
+.header-subnav li a:hover {
+
+	background: rgba(250, 250, 250, 0.15);
+transition: all 0.35s ease-in-out; 
+}
+
+.log-in-form {
+  border: 1px solid #cacaca;
+  margin-top:2.5rem;
+  padding:1rem;
+  border-radius: 3px;
+ 
+ }
+ 
+.mlogin-form{
+	padding:1rem;	
+}
+.mtable{
+	padding: 5rem;	
+}
+
+
+
+.foundation-5-top-bar {
+  background: #7777773d;
+  color: #fefefe;
+  padding-top:0.4rem;
+  padding-bottom:0rem;
+  
+}
+
+.foundation-5-top-bar .menu {
+  background: #333;
+}
+
+
+
+.foundation-5-top-bar .menu a {
+  color: #fefefe;
+  background-color: #21252ad9;
+}
+
+.foundation-5-top-bar .is-dropdown-submenu {
+  border: 0;
+}
+
+.foundation-5-top-bar .is-dropdown-submenu-item.opens-right a::after {
+  border-color: transparent transparent transparent #fefefe;
+}
+
+.foundation-5-top-bar .js-drilldown-back > a::before {
+  border-color: transparent #fefefe transparent transparent;
+}
+
+.foundation-5-top-bar .is-drilldown-submenu-parent > a::after {
+  border-color: transparent transparent transparent #fefefe;
+}
+
+.foundation-5-top-bar .dropdown.menu.medium-horizontal > li.is-dropdown-submenu-parent > a::after {
+  border-color: #fefefe transparent transparent;
+}
+
+.mapContainer{
+	width:1500px;
+	height:1500px;
+	background:yellow;
+}
+
+
+
+.hero-full-screen {
+  height: 100vh;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background: url("https://images.pexels.com/photos/378273/pexels-photo-378273.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb") center center no-repeat;
+  background-size: cover;
+}
+
+.hero-full-screen .middle-content-section {
+  text-align: center;
+  color: #fefefe;
+}
+
+.hero-full-screen .top-content-section {
+  width: 100%;
+}
+
+.hero-full-screen .bottom-content-section {
+  padding: 1rem;
+}
+
+.hero-full-screen .bottom-content-section svg {
+  height: 3.75rem;
+  width: 3.75rem;
+  fill: #fefefe;
+}
+
+.hero-full-screen .top-bar {
+  background: transparent;
+}
+
+.hero-full-screen .top-bar .menu {
+  background: transparent;
+}
+
+.hero-full-screen .top-bar .menu-text {
+  color: #fefefe;
+}
+
+.hero-full-screen .top-bar .menu li {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.hero-full-screen .top-bar .menu a {
+  color: #fefefe;
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.footer {
+  background-color: #292c2f;
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 4rem; }
+  .footer p.slogan {
+    color: #8d9093;
+    font-size: 1.8rem;
+    margin: 0 0 1rem; }
+  .footer p.copywrite {
+    color: #8f9296;
+    font-size: 0.875rem;
+    margin: 0; }
+  .footer .links a {
+    list-style: none;
+    font-weight: bold;
+    color: #ffffff;
+    padding: 3rem 0 2rem;
+    margin: 0; }
+    .footer .links a::after {
+      content: "•";
+      padding: 0 0.4rem 0 0.8rem; }
+    .footer .links a:last-child::after {
+      content: "";
+      padding: 0 0.4rem 0 0.8rem; }

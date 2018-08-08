@@ -7,8 +7,98 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-</head>
+	<script
+	src="https://code.jquery.com/jquery-3.3.1.min.js"
+	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.0-rc.2/dist/css/foundation.min.css" integrity="sha256-iJQ8dZac/jUYHxiEnZJsyVpKcdq2sQvdA7t02QFmp30= sha384-SplqNBo/0ZlvSdwrP/riIPDozO5ck8+yIm++KVqyMAC53S6m3BaV+2OLpi7ULOOh sha512-ho6hK4sAWdCeqopNZWNy1d9Ok2hzfTLQLcGSr8ZlRzDzh6tNHkVoqSl6wgLsqls3yazwiG9H9dBCtSfPuiLRCQ==" crossorigin="anonymous">
+	<!-- Compressed JavaScript -->
+	<script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.0-rc.2/dist/js/foundation.min.js" integrity="sha256-G6jsRyH1fxbsvFIXSCuwYmI1aIDYBa28xscrvmYjJy0= sha384-vtoG68NvPc9azmFJr447vvY8qgdyA4FdaJ5/bqvzIM4eAdZfO0iyRRF8l2AAscYI sha512-43seCcNrHA0BQgrtyajB9sp8yOdv5c8QdYvgjP7zJ7v+dmzAcxYDQ2gupb9aztsNWBq1COIp/3NHYkQs4l/dkg==" crossorigin="anonymous"></script> 
+  </head>
 <body>
+	<h1>HELLO FOUNDATION</h1>
   <app-root></app-root>
+  
+	<header class="mheader"> 
+		
+		<div class= "mytopbar top-bar background ">
+			<div class="large-12 medium-12 columns">
+				<div class="top-bar-right">
+					<div id="log_user_container" style="background-color:#860528">
+						<p id="container"></p>
+					</div>	
+					<a href="#"  class="mbutton button expanded">Salir</a>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="large-6 medium-6 columns">
+					
+					<div class ="row">
+						<div class="large-6 medium-6 columns">
+							<div>
+								<img src ="/MOBILITY_V4/public/images/carro1.png">
+							</div>
+						</div>
+						<div class="large-6 medium-6 columns">
+							<div class="top-bar-left">
+								<h1 class="title-small">Mobility </h1>
+								<h6 class="headline"><small>by SmartAppSolutions</small></h4>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+				<div class="large-6 medium-6 columns">
+				</div>
+			</div>
+		</div-->
+		
+		<div class="top-bar foundation-5-top-bar">
+			<div class="large-1 medium-1 columns">
+				<a href="/Mobility/usuario/inicio"  class="mbutton button expanded">Inicio</a>
+			</div>
+			<div class="row">
+				
+				<div class="large-11 medium-11 columns">
+					<div id="responsive-menu">
+						<div class="top-bar-left">
+							<ul class="dropdown vertical medium-horizontal menu" data-responsive-menu="drilldown medium-dropdown" data-auto-height="true" data-animate-height="true" >
+								<li>
+									<a href="#">Usuarios</a>
+									<ul class="menu"> 
+										<li><a href="/Mobility/usuario/add">Nuevo Usuario</a></li>
+										<li><a href="/Mobility/usuario/view">Ver Usuarios</a></li>
+									</ul>
+								</li>
+								<li><a href="#">Localizacion</a>
+									<ul class="menu"> 
+										<li><a href="#">Reporte Gps</a></li>
+										<li><a href="#">Geocercas</a></li>
+										
+									</ul>
+								</li>
+								<li><a href="#">Vehiculos</a></li>
+							</ul>
+						</div>
+						<!--div class="top-bar-right">
+							<ul class="menu">
+							<li><input type="search" placeholder="Search"></li>
+							<li><button type="button" class="button">Search</button></li>
+							</ul>
+						</div-->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--div class="top-bar-title">
+			<span data-responsive-toggle="responsive-menu" data-hide-for="medium">
+			<button class="menu-icon" type="button" data-toggle></button>
+			</span>
+			<strong>Site Title</strong>
+		</div-->
+	</header>
+	
+	<script> $(document).foundation(); </script>
 </body>
 </html>
