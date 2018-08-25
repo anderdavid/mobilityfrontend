@@ -1,3 +1,4 @@
+import { routes } from './app.routes';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -6,6 +7,7 @@ import { TestComponent } from './test/test.component';
 import { NavbarComponent } from './navbar.component';
 import { ViewUserComponent } from './view-user/view-user.component';
 import { CreateUserComponent } from './create-user/create-user.component';
+import { Routes,RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,7 @@ import { CreateUserComponent } from './create-user/create-user.component';
     CreateUserComponent
   ],
   imports: [
+    routes,
     BrowserModule
   ],
   providers: [],
