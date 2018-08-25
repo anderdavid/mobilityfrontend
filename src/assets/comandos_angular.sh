@@ -20,5 +20,13 @@
 
 5. Crear componente barra de navegacion
 
+#ng g c navbar -is --flat
 
+6. Crear componente de visualizacion de usuario
+
+#ng g c viewUser
+
+7. Crear componente de creacion de usuario
+
+#ng g c createUser
 
