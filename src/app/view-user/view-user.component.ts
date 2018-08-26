@@ -1,5 +1,6 @@
 import { Component, OnInit,Input} from '@angular/core';
 import { Usuario } from '../models/usuario';
+import { UsuarioService } from '../services/usuario.service';
 
 @Component({
   selector: 'app-view-user',
@@ -11,17 +12,11 @@ export class ViewUserComponent implements OnInit {
   usuarios:Usuario[] =[];
   usuarioSelected:Usuario;
 
-  constructor() { }
+  constructor(private usuarioService:UsuarioService) { }
 
   ngOnInit() {
 
-  	this.usuarios = [
-  		new Usuario("1","sdfsdf","sdfsdf","sdfsdf","sdfsdf","sdfsdf","sdfsdf","sdfsdf","sdfsdf","sdfsdf"),
-  		new Usuario("2","sdfsdf","sdfsdf","sdfsdf","sdfsdf","sdfsdf","sdfsdf","sdfsdf","sdfsdf","sdfsdf"),
-  		new Usuario("3","sdfsdf","sdfsdf","sdfsdf","sdfsdf","sdfsdf","sdfsdf","sdfsdf","sdfsdf","sdfsdf"),
-  		new Usuario("4","sdfsdf","sdfsdf","sdfsdf","sdfsdf","sdfsdf","sdfsdf","sdfsdf","sdfsdf","sdfsdf")
-
-  	];
+  	this.usuarios =this.usuarioService.getUsuarios();
   }
 
   onSelected(usuario:Usuario){

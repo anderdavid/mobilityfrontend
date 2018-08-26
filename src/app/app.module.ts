@@ -7,6 +7,7 @@ import { TestComponent } from './test/test.component';
 import { NavbarComponent } from './navbar.component';
 import { ViewUserComponent } from './view-user/view-user.component';
 import { CreateUserComponent } from './create-user/create-user.component';
+import { UsuarioService } from './services/usuario.service';
 import { Routes,RouterModule} from '@angular/router';
 
 @NgModule({
@@ -21,7 +22,7 @@ import { Routes,RouterModule} from '@angular/router';
     routes,
     BrowserModule
   ],
-  providers: [],
+  providers: [UsuarioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
