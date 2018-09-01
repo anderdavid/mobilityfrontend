@@ -34,3 +34,6 @@
 
 #ng g s usuario
 
+9. Insalar libreria rx/js
+
+#npm install --save rxjs-compat

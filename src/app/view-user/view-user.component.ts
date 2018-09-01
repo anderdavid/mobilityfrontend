@@ -12,15 +12,28 @@ export class ViewUserComponent implements OnInit {
   usuarios:Usuario[] =[];
   usuarioSelected:Usuario;
 
-  constructor(private usuarioService:UsuarioService) { }
+  products:any = [];
+
+  constructor(private usuarioService:UsuarioService,private rest:UsuarioService) { }
 
   ngOnInit() {
 
-  	this.usuarios =this.usuarioService.getUsuarios();
+  	//this.usuarios =this.usuarioService.getUsuarios();
+    this.getProducts();
   }
 
   onSelected(usuario:Usuario){
   	this.usuarioSelected =usuario;
+  }
+
+  getProducts() {
+    console.log("viewUserComponent:getProducts");
+
+    this.products = [];
+    this.rest.getUsers().subscribe((data: {}) => {
+      console.log(data);
+      this.products = data;
+    });
   }
 
 

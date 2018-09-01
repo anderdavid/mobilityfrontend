@@ -9,6 +9,7 @@ import { ViewUserComponent } from './view-user/view-user.component';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { UsuarioService } from './services/usuario.service';
 import { Routes,RouterModule} from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,9 @@ import { Routes,RouterModule} from '@angular/router';
   ],
   imports: [
     routes,
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
+
   ],
   providers: [UsuarioService],
   bootstrap: [AppComponent]
