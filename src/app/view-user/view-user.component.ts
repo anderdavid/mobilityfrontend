@@ -34,8 +34,15 @@ export class ViewUserComponent implements OnInit {
     });
   }
   
-  deleteProduct(id){
+  deleteUser(id){
     console.log("delete "+id);
+     this.rest.deleteUser(id)
+      .subscribe(res => {
+          this.getUser();
+        }, (err) => {
+          console.log(err);
+        }
+      );
   }
 
 
