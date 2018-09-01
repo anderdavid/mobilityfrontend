@@ -33,7 +33,10 @@ export class ViewUserComponent implements OnInit {
       this.users = data;
     });
   }
-
+  
+  deleteProduct(id){
+    console.log("delete "+id);
+  }
 
 
 }
