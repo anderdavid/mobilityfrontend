@@ -22,9 +22,17 @@
 
 #ng g c navbar -is --flat
 
-6. Crear componente de visualizacion de usuario
+6. Crear componente de visualizacion de usuarios
 
 #ng g c viewUser
+
+6.1 Crear componente de visuaalizacion de usuario
+
+#cd src/app/view-user/
+#ng g c viewUserId --flat
+#cd ..
+#cd ..
+#cd ..
 
 7. Crear componente de creacion de usuario
 

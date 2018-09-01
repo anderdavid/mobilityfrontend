@@ -10,6 +10,7 @@ import { CreateUserComponent } from './create-user/create-user.component';
 import { UsuarioService } from './services/usuario.service';
 import { Routes,RouterModule} from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { ViewUserIdComponent } from './view-user/view-user-id.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
     TestComponent,
     NavbarComponent,
     ViewUserComponent,
-    CreateUserComponent
+    CreateUserComponent,
+    ViewUserIdComponent
   ],
   imports: [
     routes,
