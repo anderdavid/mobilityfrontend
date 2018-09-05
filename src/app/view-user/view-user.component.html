@@ -1,3 +1,11 @@
+<div *ngIf="deleteUserFlag">
+    <div class="alert alert-success alert-dismissible" id="myAlert">
+    <button type="button" class="close" (click)="closeAlert()">&times;</button>
+    <strong>Success!</strong> El usuario ha sido eliminado
+  </div>
+</div>
+
+
 
 <p style="color:#725391;">
     status: {{users.status}}

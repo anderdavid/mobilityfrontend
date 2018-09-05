@@ -14,11 +14,13 @@ export class ViewUserComponent implements OnInit {
 
   users:any = [];
   userId = 0;
+  deleteUserFlag=false;
 
   constructor(private usuarioService:UsuarioService,private rest:UsuarioService) { }
 
   ngOnInit() {
     this.getUser();
+    console.log("ngOnInit()  deleteUserFlag: "+this.deleteUserFlag);
   }
 
   /*onSelected(usuario:Usuario){
@@ -37,9 +39,11 @@ export class ViewUserComponent implements OnInit {
   
   deleteUser(){
     console.log("delete "+this.userId);
+    this.showAlert();
      this.rest.deleteUser(this.userId)
       .subscribe(res => {
           this.getUser();
+
         }, (err) => {
           console.log(err);
         }
@@ -55,5 +59,16 @@ export class ViewUserComponent implements OnInit {
     console.log("Desea borrar usuario id: "+this.userId);
     alert("Desea borrar usuario id: "+this.userId);
   }
+
+  showAlert(){
+    this.deleteUserFlag=true;
+    console.log("showAlert()  deleteUserFlag: "+this.deleteUserFlag);
+  }
+  closeAlert(){
+    this.deleteUserFlag=false;
+    console.log("closeAlert()  deleteUserFlag: "+this.deleteUserFlag);
+  }
+
+
 
  }
