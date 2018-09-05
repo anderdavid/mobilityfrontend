@@ -13,6 +13,7 @@ export class ViewUserComponent implements OnInit {
   usuarioSelected:Usuario;
 
   users:any = [];
+  mData:any=[];
   userId = 0;
   deleteUserFlag=false;
 
@@ -22,11 +23,7 @@ export class ViewUserComponent implements OnInit {
     this.getUser();
     console.log("ngOnInit()  deleteUserFlag: "+this.deleteUserFlag);
   }
-
-  /*onSelected(usuario:Usuario){
-    this.usuarioSelected = usuario;
-  }*/
-
+  
   getUser() {
     console.log("viewUserComponent:getUser");
 
@@ -38,33 +35,33 @@ export class ViewUserComponent implements OnInit {
   }
   
   deleteUser(){
-    console.log("delete "+this.userId);
+      this.mData = [];
+      console.log("delete "+this.userId);
       this.rest.deleteUser(this.userId)
-      .subscribe(res => {
-          this.getUser();
+      .subscribe((data: {}) => {
+        console.log(data);
+        this.mData=data;
+        
 
-        }, (err) => {
-          console.log(err);
+        console.log("deleteUser() datasdfsdf");
+        console.log(this.mData);
+        status =this.mData.estado;
+        console.log("deleteUser() status: "+status);
+
+
+         if(status=="true"){
+           this.showAlert();
+         }
+
+         this.getUser();
+        
         }
       );
-
-      console.log("deleteUser() "+this.users);
-      status =this.users.status;
-      console.log("deleteUser() status: "+status);
-
-      if(status=="true"){
-        this.showAlert();
-      }
-  }
+    }
 
   setUserId(id){
     this.userId=id;
     console.log("this.userId: "+this.userId);
-  }
-
-  alertId(){
-    console.log("Desea borrar usuario id: "+this.userId);
-    alert("Desea borrar usuario id: "+this.userId);
   }
 
   showAlert(){

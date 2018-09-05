@@ -68,6 +68,7 @@ export class UsuarioService {
   deleteUser (id): Observable<any> {
     console.log("deleteUser (id)");
     return this.http.delete<any>(this.endpoint + 'usuario/' + id, this.httpOptions).pipe(
+      map(this.extractData),
       tap(_ => console.log(`deleted User id=${id}`)),
       catchError(this.handleError<any>('deleteUser'))
     );

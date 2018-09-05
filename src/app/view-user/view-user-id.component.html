@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="page-header margin-none">
-        <h2>DETALLE DE USUARIO</h2>
-    </div>
+		<h2>DETALLE DE USUARIO</h2>
+	</div>
 	<div class="col-lg-12 col-sm-12 col-md-12" >
 		<div class="bg-grey">
 			
@@ -18,12 +18,40 @@
 		</div>
 	</div>
 	<div class="modal-footer">
-				<button type="button" class="btn btn-info" data-dismiss="modal">Editar</button>
-                <button type="button" class="btn btn-danger" data-dismiss="modal"
+		<button type="button" class="btn btn-info" data-dismiss="modal">Editar</button>
+		<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#DeleteUserModal"
+		(click)="setUserId(user.usuario.id)">
+		Eliminar Usuario
+	</button>
+
+</div>
+
+<div class="modal" id="DeleteUserModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+
+            <div class="modal-header">
+                <h4 class="modal-title">Alerta</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+
+            <div class="modal-body">
+                <h5>¿ Desea Eliminar este usuario ?</h5>
+            </div>
+
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-dismiss="modal"
                 (click)="deleteUser()">
-                Eliminar Usuario
+                Aceptar
             </button>
-            
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+        </div>
+
+    </div>
+</div>
 </div>
 
 
