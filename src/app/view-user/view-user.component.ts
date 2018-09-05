@@ -39,8 +39,7 @@ export class ViewUserComponent implements OnInit {
   
   deleteUser(){
     console.log("delete "+this.userId);
-    this.showAlert();
-     this.rest.deleteUser(this.userId)
+      this.rest.deleteUser(this.userId)
       .subscribe(res => {
           this.getUser();
 
@@ -48,6 +47,14 @@ export class ViewUserComponent implements OnInit {
           console.log(err);
         }
       );
+
+      console.log("deleteUser() "+this.users);
+      status =this.users.status;
+      console.log("deleteUser() status: "+status);
+
+      if(status=="true"){
+        this.showAlert();
+      }
   }
 
   setUserId(id){
