@@ -12,6 +12,8 @@ import { Routes,RouterModule} from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { ViewUserIdComponent } from './view-user/view-user-id.component';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,

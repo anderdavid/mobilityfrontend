@@ -13,6 +13,7 @@ export class ViewUserComponent implements OnInit {
   usuarioSelected:Usuario;
 
   users:any = [];
+  userId = 0;
 
   constructor(private usuarioService:UsuarioService,private rest:UsuarioService) { }
 
@@ -34,9 +35,9 @@ export class ViewUserComponent implements OnInit {
     });
   }
   
-  deleteUser(id){
-    console.log("delete "+id);
-     this.rest.deleteUser(id)
+  deleteUser(){
+    console.log("delete "+this.userId);
+     this.rest.deleteUser(this.userId)
       .subscribe(res => {
           this.getUser();
         }, (err) => {
@@ -45,5 +46,14 @@ export class ViewUserComponent implements OnInit {
       );
   }
 
+  setUserId(id){
+    this.userId=id;
+    console.log("this.userId: "+this.userId);
+  }
 
-}
+  alertId(){
+    console.log("Desea borrar usuario id: "+this.userId);
+    alert("Desea borrar usuario id: "+this.userId);
+  }
+
+ }
