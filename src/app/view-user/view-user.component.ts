@@ -43,7 +43,7 @@ export class ViewUserComponent implements OnInit {
         this.mData=data;
         
 
-        console.log("deleteUser() datasdfsdf");
+        console.log("deleteUser()");
         console.log(this.mData);
         status =this.mData.estado;
         console.log("deleteUser() status: "+status);

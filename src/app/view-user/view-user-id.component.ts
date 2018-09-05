@@ -12,7 +12,7 @@ export class ViewUserIdComponent implements OnInit {
   
   user:any;
 
-  users:any = [];
+  mData:any=[];
   userId = 0;
   deleteUserFlag=false;
 
@@ -32,22 +32,38 @@ export class ViewUserIdComponent implements OnInit {
     console.log("this.userId: "+this.userId);
   }
 
-  getUser() {
-    console.log("viewUserComponentId:getUser");
-
-    this.users = [];
-    this.rest.getUsers().subscribe((data: {}) => {
-      console.log(data);
-      this.users = data;
-    });
-  }
-
   deleteUser(){
-    this.getUser();
+      this.mData = [];
+      console.log("delete "+this.userId);
+      this.rest.deleteUser(this.userId)
+      .subscribe((data: {}) => {
+        console.log(data);
+        this.mData=data;
+        
+
+        console.log("deleteUser()");
+        console.log(this.mData);
+        status =this.mData.estado;
+        console.log("deleteUser() status: "+status);
+
+
+         if(status=="true"){
+           this.showAlert();
+         }
+
+         //this.getUser();
+          this.router.navigate(['/view']);
+        
+        }
+      );
+    }
+
+  /*deleteUser(){
+
     console.log("deleteUser() id "+this.userId);
       this.rest.deleteUser(this.userId)
       .subscribe(res => {
-          this.getUser();
+         
 
         }, (err) => {
           console.log(err);
@@ -61,7 +77,7 @@ export class ViewUserIdComponent implements OnInit {
       if(status=="true"){
           this.router.navigate(['/view']);
       }
-  }
+  }*/
 
   showAlert(){
     this.deleteUserFlag=true;
