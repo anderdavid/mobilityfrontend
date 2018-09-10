@@ -10,7 +10,7 @@ import { UsuarioService } from '../services/usuario.service';
 })
 export class CreateUserComponent implements OnInit {
 
-@Input() userData = {
+/*@Input() userData = {
 				"nombre" : "",
 				"apellido" : "",
 				"fechacNacimiento" : "",
@@ -20,11 +20,14 @@ export class CreateUserComponent implements OnInit {
 				"email" : "",
 				"login" : "",
 				"password" : ""
-			}
+			}*/
+  
 
   constructor(public rest:UsuarioService, private route: ActivatedRoute,
                private router:Router) { 
   }
+
+  userData = new Usuario();
 
   ngOnInit() {
   }
@@ -35,7 +38,7 @@ export class CreateUserComponent implements OnInit {
 
     this.rest.addUser(this.userData).subscribe(
     		(result) => {
-      			this.router.navigate(['/view/'+result.id]);
+      			this.router.navigate(['/view']);
     		}, (err) => {
       			console.log(err);
    			});
