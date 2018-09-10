@@ -6,6 +6,6 @@ TUTORIALES REST
 
 ACTIVIDADES A REALIZAR
 
--implementar dialog eliminar
+-implementar dialog eliminar   OK
 -reiplementar creacion de usuarios mvc
 -implementar actualizar usuario mvc

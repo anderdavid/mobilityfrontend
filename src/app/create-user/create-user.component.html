@@ -23,53 +23,83 @@
 		 *password*
 	-->
 
-		<form action="http://192.168.1.141:8001/apiRestV1/usuario" method="POST">
+		<form>
 			<div class="form-group">
-				<label for="text">Nombre</label>
-				<input type="text" class="form-control" name="nombre">
-			</div>
-			<div class="form-group">
-				<label for="text">Apellido</label>
-				<input type="text" class="form-control" name="apellido">
-			</div>
-			<div class="form-group">
-				<label for="text">Fecha de Nacimiento</label>
-				<input type="text" class="form-control" name="fechacNacimiento">
+				<label for="text">Nombre:</label>
+				<input [(ngModel)]="userData.nombre" 
+					type="text" class="form-control" 
+					[ngModelOptions]="{standalone: true}"
+				>
 			</div>
 
 			<div class="form-group">
-				<label for="text">Edad</label>
-				<input type="text" class="form-control" name="edad">
+
+				<label for="text">Apellido:</label>
+
+				<input type="text" class="form-control" 
+					[(ngModel)]="userData.apellido" 
+					[ngModelOptions]="{standalone: true}"
+				>
+			</div>
+			<div class="form-group">
+				<label for="text">Fecha de Nacimiento:</label>
+				<input type="text" class="form-control" 
+					[(ngModel)]="userData.fechacNacimiento"
+					[ngModelOptions]="{standalone: true}"
+				>
 			</div>
 
 			<div class="form-group">
-				<label for="text">Genero</label>
-				<input type="text" class="form-control" name="genero">
+				<label for="text">Edad:</label>
+				<input type="text" class="form-control" 
+					[(ngModel)]="userData.edad"
+					[ngModelOptions]="{standalone: true}"
+				>
 			</div>
 
 			<div class="form-group">
-				<label for="text">Ciudad</label>
-				<input type="text" class="form-control" name="ciudad">
+				<label for="text">Genero:</label>
+				<input type="text" class="form-control" 
+					[(ngModel)]="userData.genero"
+					[ngModelOptions]="{standalone: true}"
+				>
 			</div>
 
 			<div class="form-group">
-				<label for="email">email</label>
-				<input type="email" class="form-control" name="email">
+				<label for="text">Ciudad:</label>
+				<input type="text" class="form-control" 
+					[(ngModel)]="userData.ciudad"
+					[ngModelOptions]="{standalone: true}"
+				>
+			</div>
+
+			<div class="form-group">
+				<label for="email">email:</label>
+				<input type="email" class="form-control" 
+					[(ngModel)]="userData.email"
+					[ngModelOptions]="{standalone: true}"
+					>
 			</div>
 			<div class="form-group">
-				<label for="email">Login</label>
-				<input type="text" class="form-control" name="login">
+				<label for="email">Login:</label>
+				<input type="text" class="form-control"
+					[(ngModel)]="userData.login"
+					[ngModelOptions]="{standalone: true}"
+				>
 			</div>
 			<div class="form-group">
 				<label for="pwd">Password:</label>
-				<input type="password" class="form-control" name="password">
+				<input type="password" class="form-control" 
+					[(ngModel)]="userData.password"
+					[ngModelOptions]="{standalone: true}"
+				>
 			</div>
-			<div class="form-group form-check">
+			<!--div class="form-group form-check">
 				<label class="form-check-label">
 					<input class="form-check-input" type="checkbox"> Remember me
 				</label>
-			</div>
-			<button type="submit" class="btn btn-primary">Submit</button>
+			</div-->
+			<button (click)="addUser()" class="btn btn-primary">Guardar</button>
 		</form>
 	</div>
 	<div class="col-md-2 col col-lg-2"></div>

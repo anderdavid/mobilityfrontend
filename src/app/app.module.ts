@@ -11,6 +11,7 @@ import { UsuarioService } from './services/usuario.service';
 import { Routes,RouterModule} from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { ViewUserIdComponent } from './view-user/view-user-id.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -26,7 +27,8 @@ import { ViewUserIdComponent } from './view-user/view-user-id.component';
   imports: [
     routes,
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
 
   ],
   providers: [UsuarioService],

@@ -9,8 +9,7 @@ import { UsuarioService } from '../services/usuario.service';
 })
 export class ViewUserComponent implements OnInit {
   
-  usuarios:Usuario[] =[];
-  usuarioSelected:Usuario;
+  
 
   users:any = [];
   mData:any=[];

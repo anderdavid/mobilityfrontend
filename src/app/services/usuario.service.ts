@@ -52,6 +52,7 @@ export class UsuarioService {
     console.log(User);
 
     return this.http.post<any>(this.endpoint + 'usuario', JSON.stringify(User), this.httpOptions).pipe(
+    map(this.extractData),
     tap((User) => console.log(`added User w/ id=${User.id}`)),
     catchError(this.handleError<any>('addUser'))
     );
