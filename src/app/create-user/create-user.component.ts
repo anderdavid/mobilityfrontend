@@ -10,24 +10,12 @@ import { UsuarioService } from '../services/usuario.service';
 })
 export class CreateUserComponent implements OnInit {
 
-/*@Input() userData = {
-				"nombre" : "",
-				"apellido" : "",
-				"fechacNacimiento" : "",
-				"edad" : "",
-				"genero" : "",
-				"ciudad" : "",
-				"email" : "",
-				"login" : "",
-				"password" : ""
-			}*/
-  
-
-  constructor(public rest:UsuarioService, private route: ActivatedRoute,
+ constructor(public rest:UsuarioService, private route: ActivatedRoute,
                private router:Router) { 
   }
 
   userData = new Usuario();
+  mData:any=[];
 
   ngOnInit() {
   }
@@ -35,13 +23,24 @@ export class CreateUserComponent implements OnInit {
   addUser() {
 
   	console.log("CreateUserComponent: addUser()");
+  	this.mData = [];
+  	
+  	this.rest.addUser(this.userData).subscribe(
+  		(data:{})=>{
+  			console.log(data);
+  			 this.mData=data;
+  			 status =this.mData.status;
 
-    this.rest.addUser(this.userData).subscribe(
-    		(result) => {
-      			this.router.navigate(['/view']);
-    		}, (err) => {
+  			 if(status=="true"){
+           		this.router.navigate(['/view']);
+        	 }
+  			},
+  		(err) => {
       			console.log(err);
-   			});
+   			}	
+
+
+    	);
   }
 
 }
