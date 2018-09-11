@@ -23,6 +23,7 @@ export class CreateUserComponent implements OnInit {
   addUser() {
 
   	console.log("CreateUserComponent: addUser()");
+    console.log("crear "+this.userData.nombre);
   	this.mData = [];
   	
   	this.rest.addUser(this.userData).subscribe(

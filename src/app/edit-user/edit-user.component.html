@@ -1,4 +1,98 @@
-<p>
-  edit-user works!
-</p>
+<div *ngIf="vacio">
+  <span style="color:red;">No deben haber campos vacios</span>
+</div>
+{{userData.nombre}}
+<div class="container">
+	<form>
+		<div class="form-group">
+			<div *ngIf="nombreEmpty">
+				<label for=text style="color:red;"> *El campo Nombre es requerido</label>
+			</div>
+			
+			<label for="text">Nombre:</label>
+			<input type="text" class="form-control" placeholder="Ingrese su nombre"
+				[(ngModel)]="userData.nombre"
+				[ngModelOptions]="{standalone: true}" 
+			>
+		</div>
+		<div class="form-group">
+			<div *ngIf="apellidoEmpty">
+				<label for=text style="color:red;"> *El campo Apellido es requerido</label>
+			</div>
+			<label for="text">Apellido:</label>
+			<input type="text" class="form-control" placeholder="Ingrese su apellido"
+			[(ngModel)]="userData.apellido"
+			[ngModelOptions]="{standalone: true}" >
+		</div>
+
+		<div class="form-group">
+			<div *ngIf="fechaEmpty">
+				<label for=text style="color:red;"> *El campo Fecha de Nacimiento es requerido</label>
+			</div>
+			<label for="text">Fecha De Nacimiento:</label>
+			<input type="text" class="form-control" placeholder="Ingrese su apellido"
+			[(ngModel)]="userData.fechacNacimiento"
+			[ngModelOptions]="{standalone: true}">
+		</div>
+		
+		<div class="form-group">
+			<div *ngIf="edadEmpty">
+				<label for=text style="color:red;"> *El campo Edad es requerido</label>
+			</div>
+			<label for="text">Edad:</label>
+			<input type="text" class="form-control" placeholder="Ingrese su Edad"
+			[(ngModel)]="userData.edad"
+			[ngModelOptions]="{standalone: true}">
+		</div>
+		<div class="form-group">
+			<div *ngIf="generoEmpty">
+				<label for=text style="color:red;"> *El campo Genero es requerido</label>
+			</div>
+			<label for="text">Genero:</label>
+			<input type="text" class="form-control" placeholder="Ingrese su Genero"
+			[(ngModel)]="userData.genero"
+			[ngModelOptions]="{standalone: true}">
+		</div>
+		<div class="form-group">
+			<div *ngIf="ciudadEmpty">
+				<label for=text style="color:red;"> *El campo Ciudad es requerido</label>
+			</div>
+			<label for="text">Ciudad:</label>
+			<input type="text" class="form-control" placeholder="Ingrese su Ciudad"
+			[(ngModel)]="userData.ciudad"
+			[ngModelOptions]="{standalone: true}">
+		</div>
+		
+
+		<div class="form-group">
+			<div *ngIf="emailEmpty">
+				<label for=text style="color:red;"> *El campo Email es requerido</label>
+			</div>
+			<label for="email">Email:</label>
+			<input type="text" class="form-control" placeholder="Ingrese su correo electronico"
+			[(ngModel)]="userData.email"
+			[ngModelOptions]="{standalone: true}">
+		</div>
+		<div class="form-group">
+			<div *ngIf="loginEmpty">
+				<label for=text style="color:red;"> *El campo Login es requerido</label>
+			</div>
+			<label for="text">Login:</label>
+			<input type="text" class="form-control" placeholder="Ingrese su Login"
+			[(ngModel)]="userData.login"
+			[ngModelOptions]="{standalone: true}">
+		</div>
+		<div class="form-group">
+			<div *ngIf="passwordEmpty">
+				<label for=text style="color:red;"> *El campo Password es requerido</label>
+			</div>
+			<label for="text">Password:</label>
+			<input type="text" class="form-control" placeholder="Ingrese su password"
+			[(ngModel)]="userData.password"
+			[ngModelOptions]="{standalone: true}">
+		</div>
+		
+		<button class="btn btn-info" (click)=updateUser()>Actualizar</button>
+	</form>
+</div>
 
