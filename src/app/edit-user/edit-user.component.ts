@@ -12,6 +12,12 @@ export class EditUserComponent implements OnInit {
 
     vacio=false;
 
+    user:any;
+
+  	mData:any=[];
+  	userId = 0;
+  	id = this.route.snapshot.params['id'];
+
 	nombreTest="";
 	nombreEmpty=false;
 	apellidoEmpty=false;
@@ -27,9 +33,13 @@ export class EditUserComponent implements OnInit {
                private router:Router) { }
 
   userData = new Usuario();
-  mData:any=[];
-
+  
   ngOnInit() {
+
+  	this.rest.getUser(this.route.snapshot.params['id']).subscribe((data: {}) => {
+      console.log(data);
+      this.user = data;
+    });
   }
 
   validateUser(){

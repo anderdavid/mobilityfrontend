@@ -10,3 +10,9 @@ ACTIVIDADES A REALIZAR
 -reiplementar creacion de usuarios mvc
 -implementar actualizar usuario mvc
 -validar backend usuario existente
+
+pendiente urg
+
+revizar api rest despues de modificacion
+revalidar los campos en actualizacion de usuario
+consumir apirest update usuario
