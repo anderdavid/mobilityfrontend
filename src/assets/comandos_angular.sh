@@ -45,3 +45,9 @@
 9. Insalar libreria rx/js
 
 #npm install --save rxjs-compat
+
+10. Crear componente de edision de usuario
+
+#ng g c editUser
+
+

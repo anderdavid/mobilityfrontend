@@ -50,7 +50,10 @@
                             <button class="btn btn-sm btn-info" routerLink="/view/{{usuario.id}}">
                                 Ver   
                             </button>
-                            <a href="#" class="btn btn-sm btn-primary">Editar</a>
+                            <button class="btn btn-sm btn-primary" routerLink="/edit/{{usuario.id}}">
+                                Editar   
+                            </button>
+                            <!--a href="#" class="btn btn-sm btn-primary">Editar</a-->
                             <!--button class="btn btn-sm btn-danger btn-delete" 
                                 (click)="deleteUser(usuario.id)">
                                 Eliminar
@@ -58,7 +61,7 @@
                             <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#DeleteUserModal"
                             (click)="setUserId(usuario.id)">
                             Eliminar
-                        </button>
+                            </button>
                     </td>
                 </tr>
             </tbody>    

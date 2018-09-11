@@ -12,6 +12,7 @@ import { Routes,RouterModule} from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { ViewUserIdComponent } from './view-user/view-user-id.component';
 import { FormsModule } from '@angular/forms';
+import { EditUserComponent } from './edit-user/edit-user.component';
 
 
 
@@ -22,7 +23,8 @@ import { FormsModule } from '@angular/forms';
     NavbarComponent,
     ViewUserComponent,
     CreateUserComponent,
-    ViewUserIdComponent
+    ViewUserIdComponent,
+    EditUserComponent
   ],
   imports: [
     routes,
