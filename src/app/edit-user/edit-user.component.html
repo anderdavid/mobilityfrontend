@@ -2,7 +2,7 @@
   <span style="color:red;">No deben haber campos vacios</span>
 </div>
 
-{{userData.nombre}}
+{{usuario.nombre}}
 
 <div class="container">
 	<form>
@@ -13,7 +13,7 @@
 			
 			<label for="text">Nombre:</label>
 			<input type="text" class="form-control" placeholder="Ingrese su nombre"
-				[(ngModel)]="userData.nombre"
+				[(ngModel)]="usuario.nombre"
 				[ngModelOptions]="{standalone: true}"
 				value={{usuario.nombre}}
 			>
@@ -24,7 +24,7 @@
 			</div>
 			<label for="text">Apellido:</label>
 			<input type="text" class="form-control" placeholder="Ingrese su apellido"
-			[(ngModel)]="userData.apellido"
+			[(ngModel)]="usuario.apellido"
 			[ngModelOptions]="{standalone: true}" 
  			value={{usuario.apellido}}
 			>
@@ -36,7 +36,7 @@
 			</div>
 			<label for="text">Fecha De Nacimiento:</label>
 			<input type="text" class="form-control" placeholder="Ingrese su apellido"
-			[(ngModel)]="userData.fechacNacimiento"
+			[(ngModel)]="usuario.fechacNacimiento"
 			[ngModelOptions]="{standalone: true}"
 			value={{usuario.fechac_nacimiento}}>
 		</div>
@@ -47,7 +47,7 @@
 			</div>
 			<label for="text">Edad:</label>
 			<input type="text" class="form-control" placeholder="Ingrese su Edad"
-			[(ngModel)]="userData.edad"
+			[(ngModel)]="usuario.edad"
 			[ngModelOptions]="{standalone: true}"
 			value={{usuario.edad}}>
 		</div>
@@ -57,7 +57,7 @@
 			</div>
 			<label for="text">Genero:</label>
 			<input type="text" class="form-control" placeholder="Ingrese su Genero"
-			[(ngModel)]="userData.genero"
+			[(ngModel)]="usuario.genero"
 			[ngModelOptions]="{standalone: true}"
 			value={{usuario.genero}}>
 		</div>
@@ -67,7 +67,7 @@
 			</div>
 			<label for="text">Ciudad:</label>
 			<input type="text" class="form-control" placeholder="Ingrese su Ciudad"
-			[(ngModel)]="userData.ciudad"
+			[(ngModel)]="usuario.ciudad"
 			[ngModelOptions]="{standalone: true}"
 			value={{usuario.ciudad}}>
 		</div>
@@ -79,7 +79,7 @@
 			</div>
 			<label for="email">Email:</label>
 			<input type="text" class="form-control" placeholder="Ingrese su correo electronico"
-			[(ngModel)]="userData.email"
+			[(ngModel)]="usuario.email"
 			[ngModelOptions]="{standalone: true}"
 			value={{usuario.email}}>
 		</div>
@@ -89,7 +89,7 @@
 			</div>
 			<label for="text">Login:</label>
 			<input type="text" class="form-control" placeholder="Ingrese su Login"
-			[(ngModel)]="userData.login"
+			[(ngModel)]="usuario.login"
 			[ngModelOptions]="{standalone: true}"
 			value={{usuario.login}}>
 		</div>
@@ -99,7 +99,7 @@
 			</div>
 			<label for="text">Password:</label>
 			<input type="text" class="form-control" placeholder="Ingrese su password"
-			[(ngModel)]="userData.password"
+			[(ngModel)]="usuario.password"
 			[ngModelOptions]="{standalone: true}"
 			value={{usuario.password}}>
 		</div>
