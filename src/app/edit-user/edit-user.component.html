@@ -1,8 +1,9 @@
 <div *ngIf="vacio">
   <span style="color:red;">No deben haber campos vacios</span>
 </div>
+
 {{userData.nombre}}
-{{user.usuario.nombre}}
+
 <div class="container">
 	<form>
 		<div class="form-group">
@@ -14,7 +15,7 @@
 			<input type="text" class="form-control" placeholder="Ingrese su nombre"
 				[(ngModel)]="userData.nombre"
 				[ngModelOptions]="{standalone: true}"
-				value={{user.usuario.nombre}}
+				value={{usuario.nombre}}
 			>
 		</div>
 		<div class="form-group">
@@ -25,7 +26,7 @@
 			<input type="text" class="form-control" placeholder="Ingrese su apellido"
 			[(ngModel)]="userData.apellido"
 			[ngModelOptions]="{standalone: true}" 
- 			value={{user.usuario.apellido}}
+ 			value={{usuario.apellido}}
 			>
 		</div>
 
@@ -37,7 +38,7 @@
 			<input type="text" class="form-control" placeholder="Ingrese su apellido"
 			[(ngModel)]="userData.fechacNacimiento"
 			[ngModelOptions]="{standalone: true}"
-			value={{user.usuario.fechac_nacimiento}}>
+			value={{usuario.fechac_nacimiento}}>
 		</div>
 		
 		<div class="form-group">
@@ -48,7 +49,7 @@
 			<input type="text" class="form-control" placeholder="Ingrese su Edad"
 			[(ngModel)]="userData.edad"
 			[ngModelOptions]="{standalone: true}"
-			value={{user.usuario.edad}}>
+			value={{usuario.edad}}>
 		</div>
 		<div class="form-group">
 			<div *ngIf="generoEmpty">
@@ -58,7 +59,7 @@
 			<input type="text" class="form-control" placeholder="Ingrese su Genero"
 			[(ngModel)]="userData.genero"
 			[ngModelOptions]="{standalone: true}"
-			value={{user.usuario.genero}}>
+			value={{usuario.genero}}>
 		</div>
 		<div class="form-group">
 			<div *ngIf="ciudadEmpty">
@@ -68,7 +69,7 @@
 			<input type="text" class="form-control" placeholder="Ingrese su Ciudad"
 			[(ngModel)]="userData.ciudad"
 			[ngModelOptions]="{standalone: true}"
-			value={{user.usuario.ciudad}}>
+			value={{usuario.ciudad}}>
 		</div>
 		
 
@@ -80,7 +81,7 @@
 			<input type="text" class="form-control" placeholder="Ingrese su correo electronico"
 			[(ngModel)]="userData.email"
 			[ngModelOptions]="{standalone: true}"
-			value={{user.usuario.email}}>
+			value={{usuario.email}}>
 		</div>
 		<div class="form-group">
 			<div *ngIf="loginEmpty">
@@ -90,7 +91,7 @@
 			<input type="text" class="form-control" placeholder="Ingrese su Login"
 			[(ngModel)]="userData.login"
 			[ngModelOptions]="{standalone: true}"
-			value={{user.usuario.login}}>
+			value={{usuario.login}}>
 		</div>
 		<div class="form-group">
 			<div *ngIf="passwordEmpty">
@@ -100,7 +101,7 @@
 			<input type="text" class="form-control" placeholder="Ingrese su password"
 			[(ngModel)]="userData.password"
 			[ngModelOptions]="{standalone: true}"
-			value={{user.usuario.password}}>
+			value={{usuario.password}}>
 		</div>
 		
 		<button class="btn btn-info" (click)=updateUser()>Actualizar</button>
