@@ -130,11 +130,28 @@ export class EditUserComponent implements OnInit {
 
   	if(this.validateUser()){
 
-      this.rest.updateUser(this.route.snapshot.params['id'], this.usuario).subscribe((result) => {
+      this.rest.updateUser(this.route.snapshot.params['id'], this.usuario).subscribe(
+      (data:{})=>{
+        console.log(data);
+         this.mData=data;
+         status =this.mData.status;
+
+         if(status=="true"){
+               this.router.navigate(['/view']);
+           }
+        },
+      (err) => {
+            console.log(err);
+         }  
+
+
+      );
+
+      /*this.rest.updateUser(this.route.snapshot.params['id'], this.usuario).subscribe((result) => {
         this.router.navigate(['/view']);
       }, (err) => {
         console.log(err);
-      });
+      });*/
     
     }
 
