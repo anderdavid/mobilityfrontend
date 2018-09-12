@@ -33,9 +33,6 @@ export class EditUserComponent implements OnInit {
   constructor(public rest:UsuarioService, private route: ActivatedRoute,
                private router:Router) { }
 
-  userData = new Usuario();
-
-  
   ngOnInit() {
 
   	this.rest.getUser(this.route.snapshot.params['id']).subscribe((data: {}) => {
@@ -43,6 +40,7 @@ export class EditUserComponent implements OnInit {
       this.user = data;
       console.log(this.user);
       this.usuario =this.user.usuario;
+      this.usuario.fechacNacimiento=this.user.usuario.fechac_nacimiento;
       console.log(this.usuario);
     });
   }
@@ -51,7 +49,7 @@ export class EditUserComponent implements OnInit {
 
   	let validate =true;
 
-  	if(this.userData.nombre==null || this.userData.nombre==""){
+  	if(this.usuario.nombre==null || this.usuario.nombre==""){
   		this.nombreEmpty=true;
   		validate=false;
   	}else{
@@ -59,56 +57,56 @@ export class EditUserComponent implements OnInit {
 
   	}
 
-  	if(this.userData.apellido==null|| this.userData.apellido==""){
+  	if(this.usuario.apellido==null|| this.usuario.apellido==""){
   		this.apellidoEmpty=true;
   		validate=false;
   	}else{
   		this.apellidoEmpty=false;
   	}
 
-  	if(this.userData.fechacNacimiento==null|| this.userData.fechacNacimiento==""){
+  	if(this.usuario.fechacNacimiento==null|| this.usuario.fechacNacimiento==""){
   		this.fechaEmpty=true;
   		validate=false;
   	}else{
   		this.fechaEmpty=false;
   	}
 
-  	if(this.userData.edad==null|| this.userData.edad==""){
+  	if(this.usuario.edad==null|| this.usuario.edad==""){
   		this.edadEmpty=true;
   		validate=false;
   	}else{
   		this.edadEmpty=false;
   	}
 
-  	if(this.userData.genero==null|| this.userData.genero==""){
+  	if(this.usuario.genero==null|| this.usuario.genero==""){
   		this.generoEmpty=true;
   		validate=false;
   	}else{
   		this.generoEmpty=false;
   	}
 
-  	if(this.userData.ciudad==null || this.userData.ciudad==""){
+  	if(this.usuario.ciudad==null || this.usuario.ciudad==""){
   		this.ciudadEmpty=true;
   		validate=false;
   	}else{
   		this.ciudadEmpty=false;
   	}
 
-  	if(this.userData.email==null || this.userData.email==""){
+  	if(this.usuario.email==null || this.usuario.email==""){
   		this.emailEmpty=true;
   		validate=false;
   	}else{
   		this.emailEmpty=false;
   	}
 
-  	if(this.userData.login==null || this.userData.login==""){
+  	if(this.usuario.login==null || this.usuario.login==""){
   		this.loginEmpty=true;
   		validate=false;
   	}else{
   		this.loginEmpty=false;
   	}
 
-  	if(this.userData.password==null || this.userData.password==""){
+  	if(this.usuario.password==null || this.usuario.password==""){
   		this.passwordEmpty=true;
   		validate=false;
   	}else{
@@ -128,15 +126,19 @@ export class EditUserComponent implements OnInit {
   updateUser(){
 
   	console.log("update user");
-  	console.log("nombre: "+this.userData.nombre);
+  	console.log("nombre: "+this.usuario.nombre);
 
-  	//this.validateUser();
+  	if(this.validateUser()){
 
-    this.rest.updateUser(this.route.snapshot.params['id'], this.usuario).subscribe((result) => {
-      this.router.navigate(['/view']);
-    }, (err) => {
-      console.log(err);
-    });
+      this.rest.updateUser(this.route.snapshot.params['id'], this.usuario).subscribe((result) => {
+        this.router.navigate(['/view']);
+      }, (err) => {
+        console.log(err);
+      });
+    
+    }
+
+    
   
 
   }
