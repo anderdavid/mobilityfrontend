@@ -4,6 +4,7 @@
 
 {{usuario.nombre}}
 
+
 <div class="container">
 	<form>
 		<div class="form-group">
@@ -35,10 +36,33 @@
 				<label for=text style="color:red;"> *El campo Fecha de Nacimiento es requerido</label>
 			</div>
 			<label for="text">Fecha De Nacimiento:</label>
-			<input type="text" class="form-control" placeholder="Ingrese su apellido"
+			<input type="text" class="form-control" placeholder="Ingrese su Fecha de Nacimiento"
+			disabled="true" 
 			[(ngModel)]="usuario.fechacNacimiento"
 			[ngModelOptions]="{standalone: true}"
 			value={{usuario.fechac_nacimiento}}>
+
+			<div class="form-group form-inline form-control col-lg-8 col-md-8 col-sm-8">
+				<label for="text" class="col-lg-1 col-md1 col-sm1">Año:</label>
+				<select type="text" 
+				(change)="onSelectYear($event.target.value)" class="form-control col-lg-2 col-md2 col-sm2" >
+					<option  *ngFor="let year of years">{{year}}</option>
+				</select>
+				<label for="text" class="col-lg-1 col-md1 col-sm1">Mes:</label>
+				<select type="text" 
+				(change)="onSelectMonth($event.target.value)" class="form-control col-lg-2 col-md2 col-sm2">
+					<option  *ngFor="let month of months">{{month}}</option>
+				</select>
+				<label for="text" class="col-lg-1 col-md1 col-sm1">Dia:</label>
+				<select type="text" 
+				 (change)="onSelectDay($event.target.value)" class="form-control col-lg-2 col-md2 col-sm2">
+					<option  *ngFor="let day of days" onClick="alert('day')">{{day}}</option>
+				</select>
+
+
+			</div>
+ 
+			
 		</div>
 		
 		<div class="form-group">
