@@ -10,28 +10,30 @@ import { UsuarioService } from '../services/usuario.service';
 })
 export class EditUserComponent implements OnInit {
 
-    vacio=false;
+  vacio=false;
 
-    user:any;
-    usuario:Usuario;
+  user:any;
+  usuario:Usuario;
 
-  	mData:any=[];
-  	userId = 0;
-  	id = this.route.snapshot.params['id'];
+  mData:any=[];
+  userId = 0;
+  id = this.route.snapshot.params['id'];
 
-	nombreTest="";
-	nombreEmpty=false;
-	apellidoEmpty=false;
-	fechaEmpty=false;
-	edadEmpty=false;
-	generoEmpty=false;
-	ciudadEmpty=false;
-	emailEmpty=false;
-	loginEmpty=false;
-	passwordEmpty=false;
+  nombreTest="";
+  nombreEmpty=false;
+  apellidoEmpty=false;
+  fechaEmpty=false;
+  edadEmpty=false;
+  generoEmpty=false;
+  ciudadEmpty=false;
+  emailEmpty=false;
+  loginEmpty=false;
+  passwordEmpty=false;
+
+  Ciudades = ["Bogota","Medellin","Cali","Pereira","Armenia","Pasto","Ipiales"];
 
   constructor(public rest:UsuarioService, private route: ActivatedRoute,
-               private router:Router) { }
+    private router:Router) { }
 
   ngOnInit() {
 
@@ -131,39 +133,32 @@ export class EditUserComponent implements OnInit {
   	if(this.validateUser()){
 
       this.rest.updateUser(this.route.snapshot.params['id'], this.usuario).subscribe(
-      (data:{})=>{
-        console.log(data);
-         this.mData=data;
-         status =this.mData.status;
+        (data:{})=>{
+          console.log(data);
+          this.mData=data;
+          status =this.mData.status;
 
-         if(status=="true"){
-               this.router.navigate(['/view']);
-           }
+          if(status=="true"){
+            this.router.navigate(['/view']);
+          }
         },
-      (err) => {
-            console.log(err);
-         }  
+        (err) => {
+          console.log(err);
+        }  
 
 
-      );
-
-      /*this.rest.updateUser(this.route.snapshot.params['id'], this.usuario).subscribe((result) => {
-        this.router.navigate(['/view']);
-      }, (err) => {
-        console.log(err);
-      });*/
-    
+        );
     }
 
     
-  
+
 
   }
 
- 
 
 
 
- }
 
- 
+}
+
+

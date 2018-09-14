@@ -66,10 +66,19 @@
 				<label for=text style="color:red;"> *El campo Ciudad es requerido</label>
 			</div>
 			<label for="text">Ciudad:</label>
-			<input type="text" class="form-control" placeholder="Ingrese su Ciudad"
+			
+			<!--input type="text" class="form-control" placeholder="Ingrese su Ciudad"
 			[(ngModel)]="usuario.ciudad"
 			[ngModelOptions]="{standalone: true}"
-			value={{usuario.ciudad}}>
+			value={{usuario.ciudad}}-->
+
+			<select type="text" class="form-control" 
+				[(ngModel)]="usuario.ciudad"
+				[ngModelOptions]="{standalone: true}"
+				value={{usuario.ciudad}}>
+					<option *ngFor="let i of Ciudades">{{i}}</option>
+			</select>
+
 		</div>
 		
 
