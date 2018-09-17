@@ -80,11 +80,21 @@
 				<label for=text style="color:red;"> *El campo Genero es requerido</label>
 			</div>
 			<label for="text">Genero:</label>
-			<input type="text" class="form-control" placeholder="Ingrese su Genero"
-			[(ngModel)]="usuario.genero"
-			[ngModelOptions]="{standalone: true}"
-			value={{usuario.genero}}>
+			<div class="form-group">
+				<div class="form-check-inline">
+					<label class="form-check-label" for="radio1">
+						<input type="radio" name="optradio" id="radio1" checked="true" value="M" [(ngModel)]="usuario.genero">Masculino
+					</label>
+				</div>
+				<div class="form-check-inline">
+					<label class="form-check-label" for="radio2">
+						<input type="radio" name="optradio" id="radio2" value="F" [(ngModel)]="usuario.genero">Femenino
+					</label>
+				</div>
+
+			</div>
 		</div>
+
 		<div class="form-group">
 			<div *ngIf="ciudadEmpty">
 				<label for=text style="color:red;"> *El campo Ciudad es requerido</label>
