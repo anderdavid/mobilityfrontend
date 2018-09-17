@@ -1,149 +1,135 @@
-<div class="main container">
-	<div class="col-md-2 col lg-4" ></div>
 
-	<div class="col-md-8 col lg-6">
-
-		<form>
-			<div class="form-group">
-				<label for="text">Nombre:</label>
-				<input [(ngModel)]="userData.nombre" 
-				type="text" class="form-control"
-				placeholder="Ingrese su nombre" required
-				[ngModelOptions]="{standalone: true}"
-				>
+<div class="container">
+	<form>
+		<div class="form-group">
+			<div *ngIf="nombreEmpty">
+				<label for=text style="color:red;"> *El campo Nombre es requerido</label>
 			</div>
-
-			<div class="form-group">
-
-				<label for="text">Apellido:</label>
-
-				<input type="text" class="form-control" 
-				[(ngModel)]="userData.apellido" 
+			
+			<label for="text">Nombre:</label>
+			<input type="text" class="form-control" placeholder="Ingrese su nombre"
+				[(ngModel)]="usuario.nombre"
 				[ngModelOptions]="{standalone: true}"
-				placeholder="Ingrese su apellido" required
-				>
+				value={{usuario.nombre}}
+			>
+		</div>
+		<div class="form-group">
+			<div *ngIf="apellidoEmpty">
+				<label for=text style="color:red;"> *El campo Apellido es requerido</label>
 			</div>
-			<div class="form-group">
-				<label for="text">Fecha de Nacimiento:</label>
-				<input type="text"  
-				[(ngModel)]="userData.fechacNacimiento"
-				[ngModelOptions]="{standalone: true}"
-				class="span2" id="dp1" required
-				>
-				<script>
-					$(function(){
-						$('#dp1').fdatepicker({
-							initialDate: '1990-01-01',
-							format: 'yyyy-mm-dd',
-							disableDblClickSelection: true,
-							leftArrow:'<<',
-							rightArrow:'>>',
-							closeIcon:'X',
-							closeButton: true
-						});
-					});
-				</script>
+			<label for="text">Apellido:</label>
+			<input type="text" class="form-control" placeholder="Ingrese su apellido"
+			[(ngModel)]="usuario.apellido"
+			[ngModelOptions]="{standalone: true}" 
+ 			value={{usuario.apellido}}
+			>
+		</div>
+		<div class="form-group">
+			<div *ngIf="fechaEmpty">
+				<label for=text style="color:red;"> *El campo Fecha de Nacimiento es requerido</label>
 			</div>
+			<label for="text">Fecha De Nacimiento:</label>
+			<input type="text" class="form-control" placeholder="Ingrese su Fecha de Nacimiento"
+			disabled="true" 
+			[(ngModel)]="usuario.fechacNacimiento"
+			[ngModelOptions]="{standalone: true}"
+			value={{usuario.fechac_nacimiento}}>
 
-			<div class="form-group">
-				<label for="text">Edad:</label>
-				<input type="text" class="form-control" 
-				[(ngModel)]="userData.edad"
-				[ngModelOptions]="{standalone: true}"
-				>
-			</div>
+			<div class="form-group form-inline form-control col-lg-8 col-md-8 col-sm-8">
+				<label for="text" class="col-lg-1 col-md1 col-sm1">Año:</label>
+				<select type="text" 
+				(change)="onSelectYear($event.target.value)" class="form-control col-lg-2 col-md2 col-sm2" >
+					<option  *ngFor="let year of years">{{year}}</option>
+				</select>
+				<label for="text" class="col-lg-1 col-md1 col-sm1">Mes:</label>
+				<select type="text" 
+				(change)="onSelectMonth($event.target.value)" class="form-control col-lg-2 col-md2 col-sm2">
+					<option  *ngFor="let month of months">{{month}}</option>
+				</select>
+				<label for="text" class="col-lg-1 col-md1 col-sm1">Dia:</label>
+				<select type="text" 
+				 (change)="onSelectDay($event.target.value)" class="form-control col-lg-2 col-md2 col-sm2">
+					<option  *ngFor="let day of days" onClick="alert('day')">{{day}}</option>
+				</select>
 
-			<label for="text">Genero:</label><br>
+
+			</div>
+ 
+			
+		</div>
+		
+		<div class="form-group">
+			<div *ngIf="generoEmpty">
+				<label for=text style="color:red;"> *El campo Genero es requerido</label>
+			</div>
+			<label for="text">Genero:</label>
 			<div class="form-group">
 				<div class="form-check-inline">
 					<label class="form-check-label" for="radio1">
-						<input type="radio" class="form-check-input" id="radio1" name="optradio" value="M" checked  [(ngModel)]="userData.genero">Masculino
+						<input type="radio" name="optradio" id="radio1" checked="true" value="M" [(ngModel)]="usuario.genero">Masculino
 					</label>
 				</div>
 				<div class="form-check-inline">
 					<label class="form-check-label" for="radio2">
-						<input type="radio" class="form-check-input" id="radio2" name="optradio" value="F"  [(ngModel)]="userData.genero">Femenino
+						<input type="radio" name="optradio" id="radio2" value="F" [(ngModel)]="usuario.genero">Femenino
 					</label>
 				</div>
+
 			</div>
+		</div>
 
+		<div class="form-group">
+			<div *ngIf="ciudadEmpty">
+				<label for=text style="color:red;"> *El campo Ciudad es requerido</label>
+			</div>
+			<label for="text">Ciudad:</label>
 			
-
-			<div class="form-group">
-				<label for="text">Ciudad:</label>
-				<select type="text" class="form-control" 
-				[(ngModel)]="userData.ciudad"
+			<select type="text" class="form-control" 
+				[(ngModel)]="usuario.ciudad"
 				[ngModelOptions]="{standalone: true}"
-				>
-				<option value="Arauca">Arauca</option>
-				<option value="Armenia">Armenia</option>
-				<option value="Barranquilla">Barranquilla</option>
-				<option value="Bogotá">Bogotá</option>
-				<option value="Bucaramanga">Bucaramanga</option>
-				<option value="Cali">Cali</option>
-				<option value="Cúcuta">Cúcuta</option>
-				<option value="Florencia">Florencia</option>
-				<option value="Ibagué">Ibagué</option>
-				<option value="Ipiales">Ipiales</option>
-				<option value="Leticia">Leticia</option>
-				<option value="Manizales">Manizales</option>
-				<option value="Medellín">Medellín</option>
-				<option value="Mitú">Mitú</option>
-				<option value="Mocoa">Mocoa</option>
-				<option value="Montería">Montería</option>
-				<option value="Neiva">Neiva</option>
-				<option value="Pasto">Pasto</option>
-				<option value="Pereira">Pereira</option>
-				<option value="Popayán">Popayán</option>
-				<option value="Puerto Carreño">Puerto Carreño</option>
-				<option value="Puerto Inírida">Puerto Inírida</option>
-				<option value="Quibdó">Quibdó</option>
-				<option value="Riohacha">Riohacha</option>
-				<option value="San Andrés">San Andrés</option>
-				<option value="San José del Guaviare">San José del Guaviare</option>
-				<option value="Santa Marta">Santa Marta</option>
-				<option value="Sincelejo">Sincelejo</option>
-				<option value="Tunja">Tunja</option>
-				<option value="Valledupar">Valledupar</option>
-				<option value="Villavicencio">Villavicencio</option>
-				<option value="Yopal">Yopal</option>
+				value={{usuario.ciudad}}>
+					<option *ngFor="let i of Ciudades">{{i}}</option>
 			</select>
+
 		</div>
 
 		<div class="form-group">
-			<label for="email">email:</label>
-			<input type="email" class="form-control" 
-			[(ngModel)]="userData.email"
+			<div *ngIf="emailEmpty">
+				<label for=text style="color:red;"> *El campo Email es requerido</label>
+			</div>
+			<label for="email">Email:</label>
+			<input type="text" class="form-control" placeholder="Ingrese su correo electronico"
+			[(ngModel)]="usuario.email"
 			[ngModelOptions]="{standalone: true}"
-			placeholder="Ingrese su correo electronico" required
-			>
+			value={{usuario.email}}>
 		</div>
 		<div class="form-group">
-			<label for="email">Login:</label>
-			<input type="text" class="form-control"
-			[(ngModel)]="userData.login"
+			<div *ngIf="loginEmpty">
+				<label for=text style="color:red;"> *El campo Login es requerido</label>
+			</div>
+			<label for="text">Login:</label>
+			<input type="text" class="form-control" placeholder="Ingrese su Login"
+			[(ngModel)]="usuario.login"
 			[ngModelOptions]="{standalone: true}"
-			placeholder="Login" required
-			>
+			value={{usuario.login}}>
 		</div>
 		<div class="form-group">
-			<label for="pwd">Password:</label>
-			<input type="password" class="form-control" 
-			[(ngModel)]="userData.password"
+			<div *ngIf="passwordEmpty">
+				<label for=text style="color:red;"> *El campo Password es requerido</label>
+			</div>
+			<label for="text">Password:</label>
+			<input type="password" class="form-control" placeholder="Ingrese su password"
+			[(ngModel)]="usuario.password"
 			[ngModelOptions]="{standalone: true}"
-			placeholder="password" required
-			>
+			value={{usuario.password}}>
 		</div>
-			<!--div class="form-group form-check">
-				<label class="form-check-label">
-					<input class="form-check-input" type="checkbox"> Remember me
-				</label>
-			</div-->
-			<button (click)="addUser()" class="btn btn-primary">Guardar</button>
-		</form>
-	</div>
-	<div class="col-md-2 col col-lg-2"></div>
+
+		<button (click)="addUser()" class="btn btn-primary">Guardar</button>
+
+	</form>
+
 </div>
+
 
 
 
