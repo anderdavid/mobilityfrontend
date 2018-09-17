@@ -65,16 +65,16 @@
 			
 		</div>
 		
-		<div class="form-group">
+		<!--div class="form-group" >
 			<div *ngIf="edadEmpty">
 				<label for=text style="color:red;"> *El campo Edad es requerido</label>
 			</div>
 			<label for="text">Edad:</label>
-			<input type="text" class="form-control" placeholder="Ingrese su Edad"
+			<input type="text" disabled="true" class="form-control" placeholder="Ingrese su Edad"
 			[(ngModel)]="usuario.edad"
 			[ngModelOptions]="{standalone: true}"
 			value={{usuario.edad}}>
-		</div>
+		</div-->
 		<div class="form-group">
 			<div *ngIf="generoEmpty">
 				<label for=text style="color:red;"> *El campo Genero es requerido</label>
