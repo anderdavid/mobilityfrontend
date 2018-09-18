@@ -42,6 +42,9 @@ export class CreateUserComponent implements OnInit {
   userData = new Usuario();
 
   mData:any=[];
+
+  existUserFlag =false;
+  msgError="Error";
   
   ngOnInit() {
     this.usuario.genero="M";
@@ -63,8 +66,12 @@ export class CreateUserComponent implements OnInit {
           this.mData=data;
           status =this.mData.status;
 
+
           if(status=="true"){
             this.router.navigate(['/view']);
+          }else if(status=="false"){
+            this.showExistUser();
+            this.msgError =this.mData.msg;
           }
         },
         (err) => {
@@ -190,5 +197,15 @@ export class CreateUserComponent implements OnInit {
     }
     return edad;
   }
+
+  showExistUser(){
+    this.existUserFlag=true;
+    console.log("showExistUser()  deleteUserFlag: "+this.existUserFlag);
+  }
+  closeAlertExistUser(){
+    this.existUserFlag=false;
+    console.log("closeAlertExistUser()  deleteUserFlag: "+this.existUserFlag);
+  }
+ 
 
 }

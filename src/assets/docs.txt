@@ -7,12 +7,14 @@ TUTORIALES REST
 ACTIVIDADES A REALIZAR
 
 -implementar dialog eliminar   OK
--reiplementar creacion de usuarios mvc
--implementar actualizar usuario mvc
--validar backend usuario existente
+-reiplementar creacion de usuarios mvc ok
+-implementar actualizar usuario mvc ok
+-validar backend usuario existente ok
 
-pendiente urg
+pendiente 
 
-revizar api rest despues de modificacion
-revalidar los campos en actualizacion de usuario
-consumir apirest update usuario
+-test general para ver que falta
+
+
+
+
