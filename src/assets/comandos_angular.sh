@@ -51,3 +51,21 @@
 #ng g c editUser
 
 
+
+
+COMANDOS GIT
+
+1. borrar ramas remotas ya  no usuadas
+
+#git branch -D citySelector
+#git push origin :citySelector
+
+#git branch -D selectorCiudad
+
+#git branch -D httpClient
+#git push origin :httpClient
+
+
+
+
+
