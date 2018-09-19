@@ -6,7 +6,7 @@
 </div>
 
 <div class="container">
-	<form>
+	<form novalidate="true" validate>
 		<div class="form-group">
 			<div *ngIf="nombreEmpty">
 				<label for=text style="color:red;"> *El campo Nombre es requerido</label>
@@ -104,7 +104,7 @@
 				<label for=text style="color:red;"> *El campo Email es requerido</label>
 			</div>
 			<label for="email">Email:</label>
-			<input type="text" class="form-control" placeholder="Ingrese su correo electronico"
+			<input type="email" class="form-control" placeholder="Ingrese su correo electronico"
 			[(ngModel)]="usuario.email"
 			[ngModelOptions]="{standalone: true}"
 			value={{usuario.email}}>
