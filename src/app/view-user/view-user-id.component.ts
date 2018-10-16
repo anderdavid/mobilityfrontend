@@ -50,34 +50,12 @@ export class ViewUserIdComponent implements OnInit {
          if(status=="true"){
            this.showAlert();
          }
-
-         //this.getUser();
-          this.router.navigate(['/view']);
+          
+         this.router.navigate(['/view']);
         
         }
       );
     }
-
-  /*deleteUser(){
-
-    console.log("deleteUser() id "+this.userId);
-      this.rest.deleteUser(this.userId)
-      .subscribe(res => {
-         
-
-        }, (err) => {
-          console.log(err);
-        }
-      );
-
-      console.log("deleteUser() "+this.users);
-      status =this.users.status;
-      console.log("deleteUser() status: "+status);
-
-      if(status=="true"){
-          this.router.navigate(['/view']);
-      }
-  }*/
 
   showAlert(){
     this.deleteUserFlag=true;
