@@ -1,0 +1,41 @@
+[33m41cf629[m Se hacen ajustes de pequeños detalles
+[33m598d460[m Se implementa validacion de usuario existente
+[33maa84bdf[m Se reajusta formulario creacion de usuario
+[33med95167[m Se modifica formulario para colocar edad a partir de fecha de nacimiento
+[33m0826b43[m Se cambia tipo de dato en input password
+[33m976c5c9[m Se implementa selector de genero en usuario edit-user
+[33m2dea854[m se implementa selector de fecha en formulario
+[33m4cfde04[m Se implementa seleccion de ciudad en formulario edit-user
+[33m2d2fc81[m Se modifica manejo de respuesta de actualizacion de usuario
+[33mae48db5[m Se ajusta modelo a validaciones de formulario
+[33m3f57c11[m Se hacen ajustes a modelo de datos
+[33m7094c6c[m Se consume put en apirest
+[33m547da6e[m commit temporal
+[33m4907c1f[m Se crea funcion de validacion
+[33mdd5bc74[m Se agrega y estructura componente de edicion de usuario
+[33m6160a8b[m Se hacen modificadiones a formulario de creacion a usuario
+[33m8787edc[m Se restructura creacion de usuario
+[33m9fdd297[m Se integra formulario de creacion de usuario a modelo usuario
+[33me4ff9f0[m Se integra formulario creacion de usuarios con modelo temporal
+[33m06eee41[m se borra usuario desde view-user-id
+[33mbbff134[m se corrige bug en deleteusuario
+[33m4d0f1b9[m se agregan estilos a view-user-id
+[33mdd826d7[m se sincroniza alerta de borrado con borrado
+[33m2b216e9[m se despliega alerta de usuario borrado correctamente sin temporizador
+[33m7c2c212[m Se implementa modal de confirmacion de borrado de usuario
+[33m447292c[m se implementa formulario de creacion de usuario
+[33m2456f45[m Se consume deleter_user de api rest
+[33mc209006[m Se modifica ruta para acceder a view-user-id
+[33m2ebe362[m se crea componente para visualizar usuario
+[33m306a40a[m Se estructura peticion api rest
+[33mf370201[m Se modifica formulario
+[33mfea15e1[m archivos que no se comitearon en push anterior
+[33md5e0c8d[m Se integra usuarioService
+[33m84f8489[m Se integra tabla de visualizar usuarios con modelo usuarios
+[33m7580daa[m Se crea modelo usuarios
+[33mfa02306[m Se agrega navegacion a barra de navegacion
+[33m6052338[m Se crean componentes para crear y visualizar usuarios
+[33m394eb19[m Se crea componente de barra de navegacion
+[33m54f6ee2[m Se agrega archivo para editar comandos
+[33md11b9c3[m Se integra bootstrap4
+[33m1bb9720[m Commit inicial

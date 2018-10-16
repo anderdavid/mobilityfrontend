@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ViewUserIdComponent } from './view-user/view-user-id.component';
 import { FormsModule } from '@angular/forms';
 import { EditUserComponent } from './edit-user/edit-user.component';
+import { TestFormComponent } from './test-form/test-form.component';
 
 
 
@@ -24,7 +25,8 @@ import { EditUserComponent } from './edit-user/edit-user.component';
     ViewUserComponent,
     CreateUserComponent,
     ViewUserIdComponent,
-    EditUserComponent
+    EditUserComponent,
+    TestFormComponent
   ],
   imports: [
     routes,

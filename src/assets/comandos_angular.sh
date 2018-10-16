@@ -46,8 +46,12 @@
 
 #npm install --save rxjs-compat
 
-10. Crear componente de edision de usuario
+10. Crear componente de edicion de usuario
 
 #ng g c editUser
+
+11. Crear componente para test validaciond de formlarios
+
+#ng g c testForm
 
 

@@ -3,7 +3,9 @@ import { CreateUserComponent } from './create-user/create-user.component';
 import { ViewUserComponent } from './view-user/view-user.component';
 import { ViewUserIdComponent } from './view-user/view-user-id.component';
 import { EditUserComponent} from './edit-user/edit-user.component';
+import { TestFormComponent} from './test-form/test-form.component';
 import { ModuleWithProviders } from '@angular/core';
+
 
 
 const appRoutes: Routes =[
@@ -11,6 +13,7 @@ const appRoutes: Routes =[
   {path:'inicio', component:ViewUserComponent },
   {path:'create', component:CreateUserComponent },
   {path:'view', component:ViewUserComponent },
+  {path:'test', component:TestFormComponent },
   {
     path: 'view/:id',
     component: ViewUserIdComponent,
