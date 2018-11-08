@@ -1,46 +1,57 @@
-<div *ngIf="vacio">
-  <span style="color:red;">No deben haber campos vacios</span>
+<div *ngIf="existUserFlag">
+    <div class="alert alert-danger alert-dismissible" id="myAlert">
+    <button type="button" class="close" (click)="closeAlertExistUser()">&times;</button>
+    <strong>Error,</strong> {{msgError}}
+  </div>
 </div>
 
-{{usuario.nombre}}
-
-
 <div class="container">
-	<form>
+	<form class="form" novalidate (ngSubmit)="updateUser()" #editUserForm="ngForm">
+		
 		<div class="form-group">
+			
+			<label for="text" class="label">Nombre:</label>
+			<input type="text" name="nombre" class="form-control"
+				placeholder="Ingrese su nombre"
+				[(ngModel)]="usuario.nombre" 
+				#nombre="ngModel" 
+				required minlength="5"
+			/>
+			
+            <div *ngIf="nombre.errors?.minlength && nombre.dirty" style="color:red;">
+              Minimo cinco caracteres.
+            </div>
 			<div *ngIf="nombreEmpty">
 				<label for=text style="color:red;"> *El campo Nombre es requerido</label>
 			</div>
-			
-			<label for="text">Nombre:</label>
-			<input type="text" class="form-control" placeholder="Ingrese su nombre"
-				[(ngModel)]="usuario.nombre"
-				[ngModelOptions]="{standalone: true}"
-				value={{usuario.nombre}}
-			>
-		</div>
-		<div class="form-group">
-			<div *ngIf="apellidoEmpty">
-				<label for=text style="color:red;"> *El campo Apellido es requerido</label>
-			</div>
-			<label for="text">Apellido:</label>
-			<input type="text" class="form-control" placeholder="Ingrese su apellido"
-			[(ngModel)]="usuario.apellido"
-			[ngModelOptions]="{standalone: true}" 
- 			value={{usuario.apellido}}
-			>
-		</div>
 
+		</div>
 		<div class="form-group">
+			
+			<label for="apellido"> Apellido:</label>
+			<input class="form-control" name="apellido" type="text" placeholder="Ingrese su apellido"
+				[(ngModel)]="usuario.apellido" 
+				#apellido="ngModel"
+				required minlength="5"
+			/>
+			<div *ngIf="apellido.errors?.minlength && apellido.dirty" style="color:red;">
+              Minimo cinco caracteres.
+            </div>
+			<div *ngIf="apellidoEmpty">
+			<label for=text style="color:red;"> *El campo Apellido es requerido</label>
+			</div>
+
+		</div>
+		<div class="form-group">
+			
+			<label for="fechacNacimiento"> Fecha De Nacimiento:</label>
+			<input class="form-control" name="fechacNacimiento" type="text" placeholder="Ingrese su Fecha de Nacimiento" disabled="true" 
+				[(ngModel)]="usuario.fechacNacimiento" 
+				#fechacNacimiento="ngModel"
+			/>
 			<div *ngIf="fechaEmpty">
 				<label for=text style="color:red;"> *El campo Fecha de Nacimiento es requerido</label>
 			</div>
-			<label for="text">Fecha De Nacimiento:</label>
-			<input type="text" class="form-control" placeholder="Ingrese su Fecha de Nacimiento"
-			disabled="true" 
-			[(ngModel)]="usuario.fechacNacimiento"
-			[ngModelOptions]="{standalone: true}"
-			value={{usuario.fechac_nacimiento}}>
 
 			<div class="form-group form-inline form-control col-lg-8 col-md-8 col-sm-8">
 				<label for="text" class="col-lg-1 col-md1 col-sm1">Año:</label>
@@ -61,93 +72,106 @@
 
 
 			</div>
- 
-			
 		</div>
 		
-		<!--div class="form-group" >
-			<div *ngIf="edadEmpty">
-				<label for=text style="color:red;"> *El campo Edad es requerido</label>
-			</div>
-			<label for="text">Edad:</label>
-			<input type="text" disabled="true" class="form-control" placeholder="Ingrese su Edad"
-			[(ngModel)]="usuario.edad"
-			[ngModelOptions]="{standalone: true}"
-			value={{usuario.edad}}>
-		</div-->
+
 		<div class="form-group">
-			<div *ngIf="generoEmpty">
-				<label for=text style="color:red;"> *El campo Genero es requerido</label>
-			</div>
-			<label for="text">Genero:</label>
+			
+		<label for="genero"> Genero:</label>
 			<div class="form-group">
 				<div class="form-check-inline">
 					<label class="form-check-label" for="radio1">
-						<input type="radio" name="optradio" id="radio1" checked="true" value="M" [(ngModel)]="usuario.genero">Masculino
+						<input type="radio" name="genero" id="radio1" checked="true" value="M" 
+						[(ngModel)]="usuario.genero"
+						#genero="ngModel"
+						>Masculino
 					</label>
 				</div>
 				<div class="form-check-inline">
 					<label class="form-check-label" for="radio2">
-						<input type="radio" name="optradio" id="radio2" value="F" [(ngModel)]="usuario.genero">Femenino
+						<input type="radio" name="genero" id="radio2" value="F" 
+						[(ngModel)]="usuario.genero"
+						#genero="ngModel"
+						>Femenino
 					</label>
 				</div>
 
 			</div>
-		</div>
-
-		<div class="form-group">
-			<div *ngIf="ciudadEmpty">
-				<label for=text style="color:red;"> *El campo Ciudad es requerido</label>
+			<div *ngIf="generoEmpty">
+				<label for=text style="color:red;"> *El campo Genero es requerido</label>
 			</div>
-			<label for="text">Ciudad:</label>
+		</div>
+		<div class="form-group">
 			
-			<!--input type="text" class="form-control" placeholder="Ingrese su Ciudad"
-			[(ngModel)]="usuario.ciudad"
-			[ngModelOptions]="{standalone: true}"
-			value={{usuario.ciudad}}-->
-
-			<select type="text" class="form-control" 
+			<label for="ciudad"> Ciudad:</label>
+			
+			<select type="text" name="ciudad" class="form-control" 
 				[(ngModel)]="usuario.ciudad"
-				[ngModelOptions]="{standalone: true}"
-				value={{usuario.ciudad}}>
+				#ciudad="ngModel"
+				>
 					<option *ngFor="let i of Ciudades">{{i}}</option>
 			</select>
 
+			<div *ngIf="ciudadEmpty">
+				<label for=text style="color:red;"> *El campo Ciudad es requerido</label>
+			</div>
 		</div>
-		
-
 		<div class="form-group">
+			
+			<label for="email">Email:</label>
+			<input class="form-control" name="email" type="text" placeholder="Ingrese su correo electronico"
+				[(ngModel)]="usuario.email" 
+				#email="ngModel" required minlength="8" EmailValidator email="true"
+			/>
+			<div *ngIf="email.errors?.email && email.dirty" style="color:red;">
+              Email no valido
+            </div>
 			<div *ngIf="emailEmpty">
 				<label for=text style="color:red;"> *El campo Email es requerido</label>
 			</div>
-			<label for="email">Email:</label>
-			<input type="text" class="form-control" placeholder="Ingrese su correo electronico"
-			[(ngModel)]="usuario.email"
-			[ngModelOptions]="{standalone: true}"
-			value={{usuario.email}}>
 		</div>
 		<div class="form-group">
+			
+			<label for="login"> Login:</label>
+			<input class="form-control" name="login" type="text" placeholder="Ingrese su Login"
+				[(ngModel)]="usuario.login" 
+				#login="ngModel"
+				required minlength="5"
+			/>
+			<div *ngIf="login.errors?.minlength && login.dirty" style="color:red;">
+              Minimo cinco caracteres.
+            </div>
 			<div *ngIf="loginEmpty">
 				<label for=text style="color:red;"> *El campo Login es requerido</label>
 			</div>
-			<label for="text">Login:</label>
-			<input type="text" class="form-control" placeholder="Ingrese su Login"
-			[(ngModel)]="usuario.login"
-			[ngModelOptions]="{standalone: true}"
-			value={{usuario.login}}>
+
 		</div>
 		<div class="form-group">
+			
+			<label for="password">Password:</label>
+			<input class="form-control" name="password" type="password" placeholder="Ingrese su password"
+				[(ngModel)]="usuario.password" 
+				#password="ngModel"
+				required minlength="8"
+			/>
+			<div *ngIf="password.errors?.minlength && password.dirty" style="color:red;">
+              Minimo ocho caracteres.
+            </div>
 			<div *ngIf="passwordEmpty">
 				<label for=text style="color:red;"> *El campo Password es requerido</label>
 			</div>
-			<label for="text">Password:</label>
-			<input type="password" class="form-control" placeholder="Ingrese su password"
-			[(ngModel)]="usuario.password"
-			[ngModelOptions]="{standalone: true}"
-			value={{usuario.password}}>
 		</div>
-		
-		<button class="btn btn-info" (click)=updateUser()>Actualizar</button>
+
+		<input type="submit" class="btn btn-info" value="Actualizar"/>
 	</form>
 </div>
+
+
+	
+
+
+
+
+
+
 
