@@ -9,3 +9,17 @@
 	background: #fff;
 	box-shadow: 0 0 10px 10px #e1e1e1;
 }
+
+.container-buttons{
+	margin: 20px 20px;
+	float: left;
+}
+
+.container-buttons #viewButton{
+	margin-right: 10px;
+	
+}
+.container-buttons #editButton{
+	margin-right: 10px;
+	
+}

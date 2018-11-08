@@ -13,3 +13,24 @@
 	margin-bottom: 2em;
     background-color: #f6f6f6;
 }
+.mModal-footer{
+	padding: 20px 10px;
+	
+}
+
+.mModal-footer .left{
+
+	background-color:#444;
+	float: left;
+	margin-left: 10px;
+	margin-right: 10px;
+	position: relative;
+}
+.mModal-footer .right: {
+	background-color:#837111;
+	float: right;
+	margin-left: 10px;
+	margin-right: 10px;
+	position: relative;
+}
+

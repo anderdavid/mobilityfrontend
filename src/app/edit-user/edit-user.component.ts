@@ -152,7 +152,7 @@ export class EditUserComponent implements OnInit {
           status =this.mData.status;
 
           if(status=="true"){
-            this.router.navigate(['/view']);
+            this.router.navigate(['/view/'+this.usuario.id+'']);
           }
         },
         (err) => {

@@ -17,42 +17,54 @@
 			<ul> <strong>password:</strong> {{user.usuario.password}}</ul>
 		</div>
 	</div>
-	<div class="modal-footer">
-		<button class="btn btn-sm btn-info" routerLink="/edit/{{user.usuario.id}}">
-            Editar   
-        </button>
-		<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#DeleteUserModal"
-		(click)="setUserId(user.usuario.id)">
-		Eliminar Usuario
-	</button>
+		<div class="mModal-footer">
 
-</div>
+			<div class="left">
+				<button id="viewButton" class="btn btn-primary" 
+				routerLink="/view">
+				 Ver Usuarios
+				</button>
+			</div>
+
+			<div class="rigth">
+				<button class="btn btn-info" routerLink="/edit/{{user.usuario.id}}">
+					Editar   
+				</button>
+				<button type="button" class="btn btn-danger" data-toggle="	modal" data-target="#DeleteUserModal"
+					(click)="setUserId(user.usuario.id)">
+					Eliminar Usuario
+				</button>
+
+		</div>
+
+
+	</div>
 
 <div class="modal" id="DeleteUserModal">
-    <div class="modal-dialog">
-        <div class="modal-content">
+	<div class="modal-dialog">
+		<div class="modal-content">
 
 
-            <div class="modal-header">
-                <h4 class="modal-title">Alerta</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
+			<div class="modal-header">
+				<h4 class="modal-title">Alerta</h4>
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+			</div>
 
 
-            <div class="modal-body">
-                <h5>¿ Desea Eliminar este usuario ?</h5>
-            </div>
+			<div class="modal-body">
+				<h5>¿ Desea Eliminar este usuario ?</h5>
+			</div>
 
 
-            <div class="modal-footer">
-                <button type="button" class="btn btn-success" data-dismiss="modal"
-                (click)="deleteUser()">
-                Aceptar
-            </button>
-            <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
-        </div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-success" data-dismiss="modal"
+				(click)="deleteUser()">
+				Aceptar
+			</button>
+			<button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+		</div>
 
-    </div>
+	</div>
 </div>
 </div>
 
